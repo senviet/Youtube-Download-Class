@@ -28,7 +28,10 @@ class YoutbeDownloader
 
         $url_encoded_fmt_stream_map = '';
         parse_str($video_info);
-
+        if(isset($reason))
+        {
+            return $reason;
+        }
         if (isset($url_encoded_fmt_stream_map)) {
             $my_formats_array = explode(',', $url_encoded_fmt_stream_map);
         } else {

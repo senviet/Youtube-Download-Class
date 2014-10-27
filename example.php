@@ -1,3 +1,4 @@
+<meta charset="UTF-8" />
 <?php
 /**
  * Project : YoutbeDownloader
@@ -6,8 +7,13 @@
  * Time: 11:37 PM
  */
 require_once 'YoutbeDownloader.php';
-$qualitys = YoutbeDownloader::getInstance()->getLink('ql3cZuSwiE8');
-foreach($qualitys as $video)
+$qualitys = YoutbeDownloader::getInstance()->getLink('CevxZvSJLk8');
+if(is_string($qualitys))
 {
-    echo "<a href='" . $video['url'] . "'>" . $video['quality'] . "-" . $video['type'] .  "</a></br>";
+    echo    $qualitys;
+}
+else {
+    foreach ($qualitys as $video) {
+        echo "<a href='" . $video['url'] . "'>" . $video['quality'] . "-" . $video['type'] . "</a></br>";
+    }
 }
